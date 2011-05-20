@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	before_filter :not_self,      :only => :destroy
 	
 	def index
-		@title = "All users"
+		@title = "All Quackers"
 		#not paginated:
 		#@users = User.all
 		#paginated:
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
+		@microposts = @user.microposts.paginate(:page => params[:page])
 		@title = @user.name
 	end
 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 			sign_in @user
-			flash[:success] = "Welcome to the sample application."
+			flash[:success] = "Welcome to Quacker."
 			redirect_to @user
 		else
 			@title = "Sign up"
@@ -37,22 +38,22 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		@title = "Edit user"
+		@title = "Edit settings"
 	end
 	
 	def update
 		if @user.update_attributes(params[:user])
-			flash[:success] = "Profile updated."
+			flash[:success] = "Settings updated."
 			redirect_to @user
 		else
-			@title = "Edit user"
+			@title = "Edit settings"
 			render 'edit'
 		end
 	end
 	
 	def destroy
 			User.find(params[:id]).destroy
-			flash[:success] = "User destroyed."
+			flash[:success] = "Quacker destroyed."
 			redirect_to users_path
 	end
 	

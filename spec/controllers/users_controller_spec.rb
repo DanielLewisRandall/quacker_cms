@@ -38,7 +38,7 @@ describe UsersController do
 
       it "should have the right title" do
         get :index
-        response.should have_selector("title", :content => "All users")
+        response.should have_selector("title", :content => "All Quackers")
       end
 
       it "should have an element for each user" do
@@ -95,6 +95,14 @@ describe UsersController do
     it "should have a profile image" do
       get :show, :id => @user
       response.should have_selector("h1>img", :class => "gravatar")
+    end
+
+    it "should show the user's microposts" do
+      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+      get :show, :id => @user
+      response.should have_selector("span.content", :content => mp1.content)
+      response.should have_selector("span.content", :content => mp2.content)
     end
 
 	end
@@ -210,7 +218,7 @@ describe UsersController do
 
     it "should have the right title" do
       get :edit, :id => @user
-      response.should have_selector("title", :content => "Edit user")
+      response.should have_selector("title", :content => "Edit settings")
     end
 
     it "should have a link to change the Gravatar" do
@@ -245,7 +253,7 @@ describe UsersController do
 
       it "should have the right title" do
         put :update, :id => @user, :user => @attr
-        response.should have_selector("title", :content => "Edit user")
+        response.should have_selector("title", :content => "Edit settings")
       end
     end
 

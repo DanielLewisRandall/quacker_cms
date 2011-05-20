@@ -1,7 +1,7 @@
-<h1>Sample Application Home Page</h1>
+<h1>We're All Quackers!</h1>
 
 <% if signed_in? %>
-Home Content
+Quack!
 <% else %>
-<%= link_to "Sign up", signup_path, :class => "signup_button round" %>
+<%= link_to "Join Us!", signup_path, :class => "signup_button round" %>
 <% end %>
