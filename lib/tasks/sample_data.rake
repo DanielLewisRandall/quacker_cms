@@ -11,7 +11,7 @@ namespace :db do
     
     admin.toggle!(:admin)	
 
-    5.times do |n|
+    4.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
       password  = "password"

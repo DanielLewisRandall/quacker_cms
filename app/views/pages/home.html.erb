@@ -1,7 +1,17 @@
-<h1>We're All Quackers!</h1>
-
 <% if signed_in? %>
-Quack!
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">What the quack?</h1>
+        <%= render 'shared/micropost_form' %>
+				<%= render 'shared/feed' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
 <% else %>
-<%= link_to "Join Us!", signup_path, :class => "signup_button round" %>
+	<h1>We're All Quackers!</h1>
+	<%= link_to "Join Us!", signup_path, :class => "signup_button round" %>
 <% end %>

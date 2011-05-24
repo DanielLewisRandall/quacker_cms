@@ -245,6 +245,28 @@ table.microposts tr td.micropost
   padding-top: 10px;
 }
 
+table.microposts tr td.options 
+{
+  border-top: 1px solid #ccc;
+  vertical-align: middle;
+  padding-top: 0px;
+  color: #F00;
+  font-weight: bold;	
+}
+
+table.microposts tr td.options a.delete 
+{
+  color: #FF0000;
+	
+}
+
+table.microposts tr td.options a.delete:hover 
+{
+  	text-decoration: none;
+	background: #FF0000;
+	color: #FFFFFF;
+}
+
 table.microposts tr td.micropost span.timestamp 
 {
   display: block;
@@ -281,6 +303,11 @@ form.new_micropost textarea
 {
   height: 4em;
   margin-bottom: 0;
+}
+
+tbody tr:nth-child(2n) td, tbody tr.even td 
+{
+    background: none repeat scroll 0 0 #EEFFEE;
 }
 
 
