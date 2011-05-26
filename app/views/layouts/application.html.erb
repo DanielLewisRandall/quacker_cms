@@ -1,4 +1,27 @@
 <html>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function count(
+	box,
+	len,
+	max) 
+{
+	if (box.value.length > max)
+	{
+		box.value = 
+			box.value.substring(
+				0, 
+				max);
+	}
+	else
+	{
+		len.value = 
+			max - box.value.length;
+	}	
+}
+//  End -->
+</script>
+
 	<head>
 		<title><%= title %></title>
 		<%= csrf_meta_tag %>
