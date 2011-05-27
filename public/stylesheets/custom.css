@@ -1,6 +1,6 @@
 .container 
 {
-	width: 710px;
+	width: 98%;
 }
 
 body
@@ -260,7 +260,8 @@ table.microposts tr td.micropost
 table.microposts tr td.options 
 {
   border-top: 1px solid #ccc;
-  vertical-align: middle;
+  width: 1em;
+	vertical-align: middle;
   padding-top: 0px;
   color: #F00;
   font-weight: bold;	
@@ -316,10 +317,14 @@ form.new_micropost textarea
   width: 100%;
 	height: 8em;
 	margin-bottom: 0;
-	border: 2px solid #CCFFCC;
+	border: 1px solid #00FF00;
   padding: 2px;
   font-family: Tahoma, sans-serif;
   background-color: #EEFFEE;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
 }
 
 tbody tr:nth-child(2n) td, tbody tr.even td 
