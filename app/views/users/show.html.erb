@@ -5,7 +5,8 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <% unless @user.microposts.empty? %>
+      <%= render 'follow_form' if signed_in? %>
+			<% unless @user.microposts.empty? %>
         <%= will_paginate @microposts %>
         <table class="microposts" summary="User microposts">
           <%= render @microposts %>
@@ -15,7 +16,6 @@
     </td>
     <td class="sidebar round">
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
       <strong>Quacks</strong> <%= @user.microposts.count %>
     </td>
   </tr>
