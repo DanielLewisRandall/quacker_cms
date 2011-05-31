@@ -275,7 +275,7 @@ table.microposts tr td.options a.delete
 
 table.microposts tr td.options a.delete:hover 
 {
-  	text-decoration: none;
+  text-decoration: none;
 	background: #FF0000;
 	color: #FFFFFF;
 }
@@ -330,6 +330,27 @@ form.new_micropost textarea
 tbody tr:nth-child(2n) td, tbody tr.even td 
 {
     background: none repeat scroll 0 0 #EEFFEE;
+}
+
+tbody tr td.following_header  
+{
+	margin-bottom: 0px;
+  padding: 0px;
+  background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	text-align: center; 
+}
+
+tbody tr td.quacker_box
+{
+	margin-top: 2px;
+	background: #FFFFCC;
+	border: 2px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 
