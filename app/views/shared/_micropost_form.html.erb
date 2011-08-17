@@ -1,0 +1,15 @@
+<%= form_for @micropost, :html => {:name => 'micropost_form'} do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+	<div class="field" align="right">
+    <%= f.text_area(
+			:content,
+			{	:onKeyDown => "count(document.micropost_form.micropost_content,document.micropost_form.len,256)",
+				:onKeyUp => "count(document.micropost_form.micropost_content,document.micropost_form.len,256)",
+				:rows => 50 }) %>
+	</div>
+	<div class="actions" align="right">
+		Remaining:
+		<input align="right" readonly type="text" name="len" size="3" maxlength="3" value="256">
+		<%= f.submit "Quack" %>
+  </div>
+<% end %>

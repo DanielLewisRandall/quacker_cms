@@ -1,0 +1,16 @@
+<tr>
+  <td class="micropost">
+    <span class="content"><%= wrap(micropost.content) %></span>
+    <span class="timestamp">
+      Quacked <%= time_ago_in_words(micropost.created_at) %> ago.
+    </span>
+  </td>
+  <% if current_user?(micropost.user) || (current_user.nil? ? false : current_user.admin?) %>
+  <td class="options">
+    <%= link_to "X", micropost, :method => :delete,
+                                :confirm => "You sure?",
+                                :title => "unQuack",
+ 																:class => "delete" %>
+  </td>
+  <% end %>
+</tr>
